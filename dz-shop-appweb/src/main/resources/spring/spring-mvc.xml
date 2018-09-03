@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context-4.3.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+    ">
+ 
+   	<mvc:annotation-driven/>
+    
+    <!-- SpringMVC3.0之后推荐使用 静态资源加载-->
+    <mvc:default-servlet-handler/>
+   
+    <!-- 自动扫描注解的Controller -->
+    <context:component-scan base-package="com.dz.controller" />
+    
+    <!-- 处理在类级别上的@RequestMapping注解-->
+	<bean class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+	<!-- 处理方法级别上的@RequestMapping注解-->
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
+	<!-- 避免IE执行AJAX时,返回JSON出现下载文件 -->    
+	<bean id="mappingJackson2HttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">    
+	    <property name="supportedMediaTypes">    
+	        <list>    
+	            <value>text/html;charset=UTF-8</value>    
+	        </list>    
+	    </property>    
+	</bean>  
+	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->    
+	<bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">    
+	    <property name="messageConverters">    
+	        <list>    
+	            <ref bean="mappingJackson2HttpMessageConverter" /><!-- json转换器 -->    
+	        </list>    
+	    </property>    
+	</bean>  
+		
+    <!-- 视图解析器策略 和 视图解析器 -->
+	<!-- 对JSTL提供良好的支持 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+	
+</beans>
