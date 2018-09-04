@@ -38,7 +38,7 @@
   </build>  
   <modules> 
     <module>dz-shop-application</module>  
-    <module>dz-shop-appweb</module>  
     <module>dz-shop-application-impl</module> 
+    <module>dz-shop-appweb</module>  
   </modules> 
 </project>
