@@ -71,7 +71,7 @@ CREATE TABLE `dz_image_main` (
 
 LOCK TABLES `dz_image_main` WRITE;
 /*!40000 ALTER TABLE `dz_image_main` DISABLE KEYS */;
-INSERT INTO `dz_image_main` VALUES (1,'aa.png',1,800,500,'/uplaod/aa.png','root','2018-09-04 02:45:38',1,'0');
+INSERT INTO `dz_image_main` VALUES (1,'aa.png',1,800,500,'/upload/aa.png','root','2018-09-04 02:45:38',1,'0');
 /*!40000 ALTER TABLE `dz_image_main` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
