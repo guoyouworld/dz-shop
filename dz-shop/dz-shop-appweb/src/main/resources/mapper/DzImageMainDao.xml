@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.dz.dao.DzImageMainDao">
+    <select id="getDzImageMainById" resultType="DzImageMain">
+        select * from dz_image_main where stateflag='0' and img_id=#{img_id}
+    </select>
+</mapper>
