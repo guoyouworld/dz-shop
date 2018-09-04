@@ -1,5 +1,12 @@
-### 组织结构图
+### 数据库准备
+dz-shop目录下的
+_sql目录下的
+dz-shop.sql文件导入数据库
 
+数据库名称：dz-shop
+
+
+### 组织结构图
 dz-shop --父工程<br>
  ┝━dz-shop-application   --业务接口工程<br>
  ┝━dz-shop-application-impl --业务接口实现工程<br>
