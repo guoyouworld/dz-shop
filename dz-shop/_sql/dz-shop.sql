@@ -30,7 +30,7 @@ CREATE TABLE `dz_image_category` (
   `category_datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `stateflag` varchar(20) DEFAULT '0',
   PRIMARY KEY (`int_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,6 +39,7 @@ CREATE TABLE `dz_image_category` (
 
 LOCK TABLES `dz_image_category` WRITE;
 /*!40000 ALTER TABLE `dz_image_category` DISABLE KEYS */;
+INSERT INTO `dz_image_category` VALUES (1,'幻灯片','测试','root','2018-09-04 02:46:08','0');
 /*!40000 ALTER TABLE `dz_image_category` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +62,7 @@ CREATE TABLE `dz_image_main` (
   `img_category` int(11) DEFAULT NULL,
   `stateflag` varchar(20) DEFAULT '0',
   PRIMARY KEY (`img_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,6 +71,7 @@ CREATE TABLE `dz_image_main` (
 
 LOCK TABLES `dz_image_main` WRITE;
 /*!40000 ALTER TABLE `dz_image_main` DISABLE KEYS */;
+INSERT INTO `dz_image_main` VALUES (1,'aa.png',1,800,500,'/uplaod/aa.png','root','2018-09-04 02:45:38',1,'0');
 /*!40000 ALTER TABLE `dz_image_main` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -82,4 +84,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-04  9:32:51
+-- Dump completed on 2018-09-04 15:30:26
