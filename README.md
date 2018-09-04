@@ -1,9 +1,8 @@
 ### 数据库准备
-dz-shop目录下的
-_sql目录下的
-dz-shop.sql文件导入数据库
-
 数据库名称：dz-shop
+dz-shop目录下的_sql目录下的dz-shop.sql文件导入数据库
+
+
 
 
 ### 组织结构图
