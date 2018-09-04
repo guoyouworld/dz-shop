@@ -15,10 +15,16 @@
   <url>http://maven.apache.org</url>
   <properties>
        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-       <spring.version>3.1.2.RELEASE</spring.version>
+       <spring.version>4.3.18.RELEASE</spring.version>
    </properties>
   <dependencies>
   
+  	<!-- jackson jar -->
+    <dependency>
+        <groupId>org.codehaus.jackson</groupId>
+        <artifactId>jackson-jaxrs</artifactId>
+        <version>1.9.11</version>
+    </dependency>
   	<dependency>  
 	    <groupId>com.fasterxml.jackson.core</groupId>  
 	    <artifactId>jackson-core</artifactId>  
@@ -107,12 +113,7 @@
             <version>2.3.1</version>
             <scope>provided</scope>
         </dependency>
-        <!-- jackson jar -->
-        <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-jaxrs</artifactId>
-            <version>1.9.11</version>
-        </dependency>
+        
 
         <!-- commons jar -->
         <dependency>

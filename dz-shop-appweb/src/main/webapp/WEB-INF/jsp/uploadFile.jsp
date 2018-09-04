@@ -1,16 +1,32 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>upload file</title>
+    <meta charset="UTF-8"/>
+    <title>img</title>
+    <script src="${pageContext.request.contextPath}/js/jquery-3.2.1.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/fileinput.min.js" type="text/javascript"></script>
+    <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${pageContext.request.contextPath}/css/fileinput.min.css" rel="stylesheet">
 </head>
 <body>
-	<form action="filesUpload" method="post"  enctype="multipart/form-data">  
-        <p>选择文件:<input type="file" name="files"></p>
-        <p>选择文件:<input type="file" name="files"></p>
-        <p><input type="submit" value="提交"></p>
-    </form>  
+<input id="kv-explorer" type="file" name="files" multiple>
 </body>
+<script>
+    $(document).ready(function () {
+        $("#kv-explorer").fileinput({
+        	uploadUrl: "filesUpload.do", // server upload action
+            uploadAsync: true,
+            maxFileCount: 5,
+            showClose  : false,//显示右上角X关闭
+            showRemove : true,//显示移除按钮,跟随文本框的那个
+            showUpload : true,//是否显示上传后的按钮
+            showBrowse : true,//是否显示上传前的上传按钮
+            browseOnZoneClick: false
+        }).on("fileuploaded", function(event, data) {  
+            //上传图片后的回调函数，可以在这做一些处理
+            alert(data);
+        });
+    });
+</script>
 </html>
