@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,9 +29,15 @@ public class FileController {
 	
 	
 	@RequestMapping("/in")
-	public String test() {
+	public String test(Model model) {
 		DzImageMain dzImageMainById = dService.getDzImageMainById("1");
 		System.out.println(dzImageMainById);
+		//dzImageMainById的imgUrl字段要与图片服务器的path匹配
+		//若同一个tomcat图片不显示，就空起一个tomcat作为专用图片服务器
+		//<Context path="upload" docBase="D:\\upload" reloadable="true" crossContext="true" />
+		model.addAttribute("dzImageMainById",dzImageMainById);
+		//图片服务器域名加端口
+		model.addAttribute("imgHost","http://localhost:8521");
 		return "uploadFile";
 	}
     /*** 

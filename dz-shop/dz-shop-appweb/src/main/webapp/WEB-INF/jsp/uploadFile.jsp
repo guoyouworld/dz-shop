@@ -11,6 +11,7 @@
 </head>
 <body>
 <input id="kv-explorer" type="file" name="files" multiple>
+<img src="${imgHost}${dzImageMainById.imgUrl}">${dzImageMainById.imgName}
 </body>
 <script>
     $(document).ready(function () {
