@@ -14,8 +14,8 @@ http://localhost:8080/dz-shop-appweb/in
 ### appweb引用application
 ```
 <dependency>
-  <groupId>dz-shop</groupId>
-		<artifactId>dz-shop-application</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+	<groupId>dz-shop</groupId>
+	<artifactId>dz-shop-application</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 </dependency>
 ```
