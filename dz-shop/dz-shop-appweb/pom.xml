@@ -18,7 +18,11 @@
        <spring.version>4.3.18.RELEASE</spring.version>
    </properties>
   <dependencies>
-  
+  	<dependency>
+        <groupId>dz-shop</groupId>
+		<artifactId>dz-shop-application</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+    </dependency>
   	<!-- jackson jar -->
     <dependency>
         <groupId>org.codehaus.jackson</groupId>

@@ -17,6 +17,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.dz.entity.DzImageMain;
 import com.dz.service.DzImageMainService;
 
+import com.dz.test.Test;
+
 
 @Controller
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -28,8 +30,17 @@ public class FileController {
 	private DzImageMainService dService;;
 	
 	
+	
+	public static void main(String[] args) {
+		String test = Test.test("123");
+		System.out.println(test);
+	}
+	
+	
+	
 	@RequestMapping("/in")
 	public String test(Model model) {
+		
 		DzImageMain dzImageMainById = dService.getDzImageMainById("1");
 		System.out.println(dzImageMainById);
 		//dzImageMainById的imgUrl字段要与图片服务器的path匹配
