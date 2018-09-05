@@ -12,6 +12,8 @@ dz-shop --父工程<br>
 http://localhost:8080/dz-shop-appweb/in
 
 ### appweb引用application
+在`dz-shop-appweb`的`pom.xml`文件内加入下列代码：<br>
+
 ```
 <dependency>
 	<groupId>dz-shop</groupId>
