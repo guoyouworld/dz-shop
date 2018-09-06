@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class LoginController {
 	
 	
-	@RequestMapping(value="/auth/login", method = RequestMethod.POST)
+	@RequestMapping(value="/auth/login", method = RequestMethod.GET)
 	@ResponseBody
 	public String test(HttpServletRequest request ,Model model) {
 		Object username = request.getParameter("username");
