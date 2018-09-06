@@ -15,6 +15,10 @@
  
    	<mvc:annotation-driven/>
     
+    <mvc:cors>
+	    <mvc:mapping path="/**" />
+	</mvc:cors>
+    
     <!-- SpringMVC3.0之后推荐使用 静态资源加载-->
     <mvc:default-servlet-handler/>
    
