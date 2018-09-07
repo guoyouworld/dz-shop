@@ -18,6 +18,8 @@
     <mvc:cors>
 	    <mvc:mapping path="/**" />
 	</mvc:cors>
+	
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
     
     <!-- SpringMVC3.0之后推荐使用 静态资源加载-->
     <mvc:default-servlet-handler/>
