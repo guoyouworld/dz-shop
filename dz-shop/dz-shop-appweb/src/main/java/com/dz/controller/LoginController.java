@@ -30,4 +30,24 @@ public class LoginController {
 		System.out.println(password);
 		return "success";
 	}
+	@RequestMapping(value="auth/login_by_weixin", method = RequestMethod.GET)
+	@ResponseBody
+	public String login_by_weixin(HttpServletRequest request ,Model model) {
+		Object username = request.getParameter("username");
+		Object password = request.getParameter("password");
+		
+		System.out.println(username);
+		System.out.println(password);
+		return "success";
+	}
+	@RequestMapping(value="/auth/login", method = RequestMethod.GET)
+	@ResponseBody
+	public String test(HttpServletRequest request ,Model model) {
+		Object username = request.getParameter("username");
+		Object password = request.getParameter("password");
+		
+		System.out.println(username);
+		System.out.println(password);
+		return "success";
+	}
 }
