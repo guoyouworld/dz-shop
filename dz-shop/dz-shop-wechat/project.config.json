@@ -12,7 +12,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.5",
-	"appid": "wxf19588ff106ff2bc",
+	"appid": "wx357cfaba6993f2e0",
 	"projectname": "dz-shop-wechat",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -33,7 +33,32 @@
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": 0,
+					"name": "选择优惠券",
+					"pathName": "pages/shopping/selCoupon/selCoupon",
+					"query": "isBuy=false"
+				},
+				{
+					"id": -1,
+					"name": "订单界面",
+					"pathName": "pages/shopping/checkout/checkout",
+					"query": "isBuy=true"
+				},
+				{
+					"id": -1,
+					"name": "我的优惠券",
+					"pathName": "pages/ucenter/coupon/coupon",
+					"query": "isBuy=true"
+				},
+				{
+					"id": -1,
+					"name": "我的订单",
+					"pathName": "pages/ucenter/order/order",
+					"query": ""
+				}
+			]
 		}
 	}
 }
