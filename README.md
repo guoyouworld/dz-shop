@@ -27,6 +27,9 @@ http://localhost:8080/dz-shop-appweb/in
       ┝━账号<手机号>注册<br>
       ┝━绑定手机号<br>
       ┝━微信授权登陆<br>
-      
+
+![login](https://user-images.githubusercontent.com/21979120/45273764-ae076c80-b4e6-11e8-9ee3-0214271924d7.png)
+
+<br>
 2. 首页展示
       
