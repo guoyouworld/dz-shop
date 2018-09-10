@@ -22,3 +22,11 @@ http://localhost:8080/dz-shop-appweb/in
 	<version>0.0.1-SNAPSHOT</version>
 </dependency>
 ```
+### 当前需求
+1. 完成用户注册登陆模块
+      ┝━账号<手机号>注册
+      ┝━绑定手机号
+      ┝━微信授权登陆
+      
+2. 首页展示
+      
