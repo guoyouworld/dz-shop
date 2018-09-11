@@ -39,7 +39,8 @@ import com.dz.service.TokenService;
 @ContextConfiguration({ "classpath:spring/spring-dao.xml", "classpath:spring/spring-service.xml" })
 public class LoginController {
 	protected Logger logger = Logger.getLogger(getClass());
-	
+	@Autowired
+    protected HttpServletRequest request;
 	@Autowired
     private RestTemplate restTemplate;
 	@Autowired
@@ -109,7 +110,7 @@ public class LoginController {
             userVo.setUsername("微信用户" + CharUtil.getRandomString(12));
             userVo.setPassword(sessionData.getString("openid"));
             userVo.setRegister_time(nowTime);
-            //userVo.setRegister_ip(this.getClientIp());
+            userVo.setRegister_ip(this.getClientIp());
             userVo.setLast_login_ip(userVo.getRegister_ip());
             userVo.setLast_login_time(userVo.getRegister_time());
             userVo.setWeixin_openid(sessionData.getString("openid"));
@@ -118,7 +119,7 @@ public class LoginController {
             userVo.setNickname(userInfo.getNickName());
             userService.save(userVo);
         } else {
-            //userVo.setLast_login_ip(this.getClientIp());
+            userVo.setLast_login_ip(this.getClientIp());
             userVo.setLast_login_time(nowTime);
             userService.update(userVo);
         }
@@ -167,5 +168,17 @@ public class LoginController {
 
     public Map<String, Object> toResponsFail(String msg) {
         return toResponsObject(1, msg, null);
+    }
+    /**
+     * 获取请求方IP
+     *
+     * @return 客户端Ip
+     */
+    public String getClientIp() {
+        String xff = request.getHeader("x-forwarded-for");
+        if (xff == null) {
+            return "8.8.8.8";
+        }
+        return xff;
     }
 }
