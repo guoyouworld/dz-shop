@@ -16,7 +16,7 @@
 			token,
 			expire_time,
 			update_time
-		from tb_token
+		from dz_token
 		where user_id = #{id}
 	</select>
 
@@ -26,7 +26,7 @@
         token,
         expire_time,
         update_time
-        from tb_token
+        from dz_token
         where token = #{token}
     </select>
 
@@ -36,7 +36,7 @@
         token,
         expire_time,
         update_time
-        from tb_token
+        from dz_token
         where user_id = #{userId}
     </select>
 
@@ -46,7 +46,7 @@
         token,
         expire_time,
         update_time
-        from tb_token
+        from dz_token
         WHERE 1=1
         <choose>
             <when test="sidx != null and sidx.trim() != ''">
@@ -62,12 +62,12 @@
     </select>
 
     <select id="queryTotal" resultType="int">
-		select count(*) from tb_token
+		select count(*) from dz_token
 		WHERE 1=1
 	</select>
 
     <insert id="save" parameterType="com.dz.entity.TokenEntity">
-		insert into tb_token(
+		insert into dz_token(
 			`user_id`,
 			`token`,
 			`expire_time`,
@@ -80,7 +80,7 @@
 	</insert>
 
     <update id="update" parameterType="com.dz.entity.TokenEntity">
-        update tb_token
+        update dz_token
         <set>
             <if test="token != null">`token` = #{token},</if>
             <if test="expireTime != null">`expire_time` = #{expireTime},</if>
@@ -90,11 +90,11 @@
     </update>
 
     <delete id="delete">
-		delete from tb_token where user_id = #{value}
+		delete from dz_token where user_id = #{value}
 	</delete>
 
     <delete id="deleteBatch">
-        delete from tb_token where user_id in
+        delete from dz_token where user_id in
         <foreach item="userId" collection="array" open="(" separator="," close=")">
             #{userId}
         </foreach>
