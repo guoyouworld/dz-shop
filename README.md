@@ -1,5 +1,5 @@
 # dz-shop
-![Gitter](https://badges.gitter.im/Join Chat.svg)](聊天室 URL)
+![Gitter](https://badges.gitter.im/Join Chat.svg)
 
 ### 数据库准备
 数据库名称：dz-shop<br>
