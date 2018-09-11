@@ -1,5 +1,9 @@
 # dz-shop
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dz-shop/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+<br>
+学习向，整合技术，进阶项目
+
+
 
 ### 数据库准备
 数据库名称：dz-shop<br>
