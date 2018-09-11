@@ -1,4 +1,7 @@
 # dz-shop
+
+[![Join the chat at https://gitter.im/dz-shop/Lobby](https://badges.gitter.im/dz-shop/Lobby.svg)](https://gitter.im/dz-shop/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ![Gitter](https://badges.gitter.im/Join Chat.svg)
 
 ### 数据库准备
