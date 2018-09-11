@@ -1,5 +1,5 @@
 # dz-shop
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/dz-shop/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dz-shop/Lobby?utm_source=share-link&utm_medium=link&utm_campaign=share-link)
 
 ### 数据库准备
 数据库名称：dz-shop<br>
