@@ -23,6 +23,17 @@
 		<artifactId>dz-shop-application</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
     </dependency>
+	<dependency>
+	    <groupId>javax.validation</groupId>
+	    <artifactId>validation-api</artifactId>
+	    <version>1.1.0.Final</version>
+	</dependency> 
+    <dependency>
+	    <groupId>org.apache.commons</groupId>
+	    <artifactId>commons-lang3</artifactId>
+	    <version>3.8</version>
+	</dependency>
+    
   	<!-- jackson jar -->
     <dependency>
         <groupId>org.codehaus.jackson</groupId>
