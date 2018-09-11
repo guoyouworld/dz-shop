@@ -1,8 +1,12 @@
 package com.dz.controller;
 
+import java.net.InetSocketAddress;
+import java.net.Proxy;
+import java.net.Proxy.Type;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,6 +14,7 @@ import org.apache.commons.collections4.MapUtils;
 import org.apache.log4j.Logger;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -88,11 +93,19 @@ public class LoginController {
                 code);
         System.out.println("》》》组合token为：" + requestUrl);
         
+        //内网代理
+        /*SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+        Properties props = System.getProperties();
+        props.put("http.proxyHost", "135.251.33.15");
+        props.put("http.proxyPort", "80");
+        Proxy proxy = new Proxy(Type.HTTP, new InetSocketAddress("135.251.33.15", 80));
+        requestFactory.setProxy(proxy);
+        restTemplate.setRequestFactory(requestFactory);*/
         
         String res = restTemplate.getForObject(requestUrl, String.class);
         //res >>  {"session_key": "************+*******==","openid": "**************************"}
         JSONObject sessionData = JSON.parseObject(res);
-
+        System.out.println("res >>  "+res);
         if (null == sessionData || StringUtils.isNullOrEmpty(sessionData.getString("openid"))) {
             return toResponsFail("登录失败");
         }
