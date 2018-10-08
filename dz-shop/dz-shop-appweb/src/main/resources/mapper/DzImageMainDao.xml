@@ -7,4 +7,7 @@
     <select id="getDzImageMainById" resultType="DzImageMain">
         select * from dz_image_main where stateflag='0' and img_id=#{img_id}
     </select>
+    <select id="getDzImageMainByCategory" resultType="DzImageMain">
+        select * from dz_image_main where stateflag='0' and img_category=#{img_category}
+    </select>
 </mapper>

@@ -1,5 +1,7 @@
 package com.dz.service;
 
+import java.util.ArrayList;
+
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +14,7 @@ import com.dz.entity.DzImageMain;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @Transactional
-@Service("KSellService") 
+@Service("DzImageMainService") 
 @ContextConfiguration({ "classpath:spring/spring-dao.xml" , "classpath:spring/spring-service.xml"})
 public class DzImageMainServiceImpl implements DzImageMainService {
 	@Autowired
@@ -21,6 +23,11 @@ public class DzImageMainServiceImpl implements DzImageMainService {
 	@Override
 	public DzImageMain getDzImageMainById(String img_id) {
 		return ddao.getDzImageMainById(img_id);
+	}
+
+	@Override
+	public ArrayList<DzImageMain> getDzImageMainByCategory(String img_category) {
+		return ddao.getDzImageMainByCategory(img_category);
 	}
 
 }
