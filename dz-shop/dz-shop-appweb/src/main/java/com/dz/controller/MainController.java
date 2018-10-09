@@ -41,8 +41,8 @@ public class MainController {
 	 */
 	@RequestMapping(value="/main/slideshow")
 	@ResponseBody
-	public ArrayList<String> slideshow(HttpServletRequest request ,Model model) {
-		ArrayList<String> result =  new ArrayList<String>();
+	public ArrayList<DzImageMain> slideshow(HttpServletRequest request ,Model model) {
+		//ArrayList<String> result =  new ArrayList<String>();
 		ArrayList<DzImageMain> slideshow = dService.getDzImageMainByCategory("1");
 		if(slideshow.size()>0) {
 			ArrayList<DzImageHost> allDzImageHost = hService.getAllDzImageHost();
@@ -50,12 +50,13 @@ public class MainController {
 				int index=(int)(Math.random()*allDzImageHost.size());
 				DzImageHost dzImageHost = allDzImageHost.get(index);
 				for(DzImageMain imageMain :slideshow) {
-					String url=dzImageHost.getHostUrl()+imageMain.getImgUrl();
-					result.add(url);
+					String url="http://"+dzImageHost.getHostUrl()+imageMain.getImgUrl();
+					imageMain.setImgUrl(url);
+					//result.add(url);
 				}
 			}
 		}
-		return result;
+		return slideshow;
 	}
 	
 }
