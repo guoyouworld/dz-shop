@@ -1,7 +1,7 @@
 
 var NewApiRootUrl = 'http://127.0.0.1:8080/dz-shop-appweb/';
 module.exports = {
-  Image:'http://127.0.0.1:8521/dz-shop-appweb/',
+  Image: NewApiRootUrl+ "main/slideshow",
   IndexUrlNewGoods: NewApiRootUrl + 'index/newGoods', //
   IndexUrlHotGoods: NewApiRootUrl + 'index/hotGoods', //首页数据接口
   IndexUrlTopic: NewApiRootUrl + 'index/topic', //首页数据接口

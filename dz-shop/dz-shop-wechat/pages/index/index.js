@@ -7,7 +7,7 @@ const app = getApp()
 //网络访问
 function getRecommend(callback) {
   wx.request({
-    url: api.Image +"main/slideshow",
+    url: api.Image ,
     data: {
       g_tk: 5381,
       uin: 0,
