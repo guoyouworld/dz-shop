@@ -1,27 +1,24 @@
--- MySQL dump 10.13  Distrib 5.7.22, for Win64 (x86_64)
---
--- Host: localhost    Database: dz-shop
--- ------------------------------------------------------
--- Server version	5.7.22
+/*
+Navicat MySQL Data Transfer
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+Source Server         : 127.0.0.1
+Source Server Version : 50722
+Source Host           : localhost:3306
+Source Database       : dz-shop
 
---
--- Table structure for table `dz_image_category`
---
+Target Server Type    : MYSQL
+Target Server Version : 50722
+File Encoding         : 65001
 
+Date: 2019-04-29 08:50:29
+*/
+
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for dz_image_category
+-- ----------------------------
 DROP TABLE IF EXISTS `dz_image_category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dz_image_category` (
   `int_id` int(11) NOT NULL AUTO_INCREMENT,
   `category_name` varchar(512) DEFAULT NULL,
@@ -31,25 +28,35 @@ CREATE TABLE `dz_image_category` (
   `stateflag` varchar(20) DEFAULT '0',
   PRIMARY KEY (`int_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dz_image_category`
---
+-- ----------------------------
+-- Records of dz_image_category
+-- ----------------------------
+INSERT INTO `dz_image_category` VALUES ('1', '幻灯片', '测试', 'root', '2018-09-04 10:46:08', '0');
 
-LOCK TABLES `dz_image_category` WRITE;
-/*!40000 ALTER TABLE `dz_image_category` DISABLE KEYS */;
-INSERT INTO `dz_image_category` VALUES (1,'幻灯片','测试','root','2018-09-04 02:46:08','0');
-/*!40000 ALTER TABLE `dz_image_category` ENABLE KEYS */;
-UNLOCK TABLES;
+-- ----------------------------
+-- Table structure for dz_image_host
+-- ----------------------------
+DROP TABLE IF EXISTS `dz_image_host`;
+CREATE TABLE `dz_image_host` (
+  `host_id` int(11) NOT NULL AUTO_INCREMENT,
+  `host_name` varchar(512) DEFAULT NULL,
+  `host_url` varchar(512) DEFAULT NULL,
+  `author` varchar(512) DEFAULT NULL,
+  `host_datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `stateflag` varchar(20) DEFAULT '0',
+  PRIMARY KEY (`host_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
---
--- Table structure for table `dz_image_main`
---
+-- ----------------------------
+-- Records of dz_image_host
+-- ----------------------------
+INSERT INTO `dz_image_host` VALUES ('1', '1号图片服务器', '127.0.0.1:8521', 'root', '2018-09-27 15:54:54', '0');
 
+-- ----------------------------
+-- Table structure for dz_image_main
+-- ----------------------------
 DROP TABLE IF EXISTS `dz_image_main`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dz_image_main` (
   `img_id` int(11) NOT NULL AUTO_INCREMENT,
   `img_name` varchar(512) DEFAULT NULL,
@@ -62,26 +69,18 @@ CREATE TABLE `dz_image_main` (
   `img_category` int(11) DEFAULT NULL,
   `stateflag` varchar(20) DEFAULT '0',
   PRIMARY KEY (`img_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `dz_image_main`
---
+-- ----------------------------
+-- Records of dz_image_main
+-- ----------------------------
+INSERT INTO `dz_image_main` VALUES ('1', 'aa.png', '1', '800', '500', '/upload/aa.png', 'root', '2018-09-04 15:47:07', '1', '0');
+INSERT INTO `dz_image_main` VALUES ('2', '0.png', '2', '800', '500', '/upload/0.png', 'root', '2018-10-12 15:39:13', '1', '0');
 
-LOCK TABLES `dz_image_main` WRITE;
-/*!40000 ALTER TABLE `dz_image_main` DISABLE KEYS */;
-INSERT INTO `dz_image_main` VALUES (1,'aa.png',1,800,500,'/upload/aa.png','root','2018-09-04 07:47:07',1,'0');
-/*!40000 ALTER TABLE `dz_image_main` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dz_token`
---
-
+-- ----------------------------
+-- Table structure for dz_token
+-- ----------------------------
 DROP TABLE IF EXISTS `dz_token`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dz_token` (
   `user_id` bigint(20) NOT NULL,
   `token` varchar(100) NOT NULL COMMENT 'token',
@@ -90,24 +89,16 @@ CREATE TABLE `dz_token` (
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `token` (`token`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='用户Token';
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dz_token`
---
+-- ----------------------------
+-- Records of dz_token
+-- ----------------------------
+INSERT INTO `dz_token` VALUES ('24', '27rt0tmtk33oux8hdcndu398rifvg8nl', '2018-09-12 04:07:59', '2018-09-11 16:07:59');
 
-LOCK TABLES `dz_token` WRITE;
-/*!40000 ALTER TABLE `dz_token` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dz_token` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dz_user`
---
-
+-- ----------------------------
+-- Table structure for dz_user
+-- ----------------------------
 DROP TABLE IF EXISTS `dz_user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dz_user` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(60) NOT NULL DEFAULT '',
@@ -125,50 +116,27 @@ CREATE TABLE `dz_user` (
   `weixin_openid` varchar(50) DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `user_name` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `dz_user`
---
+-- ----------------------------
+-- Records of dz_user
+-- ----------------------------
+INSERT INTO `dz_user` VALUES ('24', '微信用户xcq1kgamkk7z', 'oHI4Q5WejuAdpGIc8LcyOQc9h7Y4', '1', null, '2018-09-11 16:07:58', '2018-09-11 16:07:58', '8.8.8.8', null, '海孟eynolds', null, '8.8.8.8', 'https://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eouXZBJkWG5Ycnomiba4Nagu2w4eXX0OvxQUs3C78rHvQUOfxp4JCBRMRQexUsFXz6XFMOicXDjM13g/132', 'oHI4Q5WejuAdpGIc8LcyOQc9h7Y4');
 
-LOCK TABLES `dz_user` WRITE;
-/*!40000 ALTER TABLE `dz_user` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dz_user` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `dz_user_level`
---
-
+-- ----------------------------
+-- Table structure for dz_user_level
+-- ----------------------------
 DROP TABLE IF EXISTS `dz_user_level`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `dz_user_level` (
   `id` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL DEFAULT '',
   `description` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dz_user_level`
---
-
-LOCK TABLES `dz_user_level` WRITE;
-/*!40000 ALTER TABLE `dz_user_level` DISABLE KEYS */;
-INSERT INTO `dz_user_level` VALUES (1,'普通用户','0'),(2,'vip','10000'),(4,'高级VIP','100000');
-/*!40000 ALTER TABLE `dz_user_level` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2018-09-11 15:31:37
+-- ----------------------------
+-- Records of dz_user_level
+-- ----------------------------
+INSERT INTO `dz_user_level` VALUES ('1', '普通用户', '0');
+INSERT INTO `dz_user_level` VALUES ('2', 'vip', '10000');
+INSERT INTO `dz_user_level` VALUES ('4', '高级VIP', '100000');
